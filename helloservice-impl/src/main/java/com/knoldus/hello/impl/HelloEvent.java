@@ -1,22 +1,15 @@
 package com.knoldus.hello.impl;
 
-import javax.annotation.Nullable;
-import javax.annotation.concurrent.Immutable;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.lightbend.lagom.javadsl.persistence.AggregateEvent;
 import com.lightbend.lagom.javadsl.persistence.AggregateEventTag;
 import com.lightbend.lagom.serialization.Jsonable;
 
-/**
- * This interface defines all the events that the HelloWorld entity supports.
- * <p>
- * By convention, the events should be inner classes of the interface, which
- * makes it simple to get a complete picture of what events an entity has.
- */
+import javax.annotation.Nullable;
+
+
 public interface HelloEvent extends Jsonable, AggregateEvent<HelloEvent> {
 
   @Override
@@ -26,9 +19,6 @@ public interface HelloEvent extends Jsonable, AggregateEvent<HelloEvent> {
 
   String getMessage();
 
-  /**
-   * An event that represents a change in greeting message.
-   */
   final class GreetingMessageChanged implements HelloEvent {
     public final String message;
 
@@ -39,9 +29,7 @@ public interface HelloEvent extends Jsonable, AggregateEvent<HelloEvent> {
 
     @Override
     public boolean equals(@Nullable Object another) {
-      if (this == another)
-        return true;
-      return another instanceof GreetingMessageChanged && equalTo((GreetingMessageChanged) another);
+      return this == another || another instanceof GreetingMessageChanged && equalTo((GreetingMessageChanged) another);
     }
 
     private boolean equalTo(GreetingMessageChanged another) {

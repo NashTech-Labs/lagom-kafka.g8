@@ -9,6 +9,6 @@ public class HelloModule extends AbstractModule implements ServiceGuiceSupport {
   @Override
   protected void configure() {
     bindServices(serviceBinding(HelloService.class, HelloServiceImpl.class));
-    bind(TestImpl.class).asEagerSingleton();
+    bind(Consumer.class).asEagerSingleton();
   }
 }

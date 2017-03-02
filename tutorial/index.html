@@ -1,0 +1,28 @@
+<body>
+<div>
+    <h2>Kafka with Lagom Framework</h2>
+</div>
+<div>
+    This is an activator template showcasing how to publish to kafka topic and subscribe to it using embedded kafka
+    provided by Lagom framework.
+</div>
+<div>
+    <h2>Clone Project</h2>
+    <pre><code>
+        git clone git@github.com:knoldus/lagom-kafka.git
+        cd lagom-kafka
+        mvn lagom:runAll
+    </code></pre>
+</div>
+<div>
+    <h2>Application runs on port : http://localhost:9000</h2>
+    <br/>
+    <h3>Publish message to kafka topic</h3><br/>
+    curl -H "Content-Type: application/json" -X POST -d '{"message":"Hi there"}' http://localhost:9000/api/hello/Alice
+    <br/>
+    <h3>Consume message fro kafka topic</h3><br/>
+    The application subscribes to the topic greeting and dump out messages to standard output.
+    <br/>
+    For any issue please raise a ticket @ [Github Issue](https://github.com/knoldus/lagom-kafka/issues)
+</div>
+</body>
