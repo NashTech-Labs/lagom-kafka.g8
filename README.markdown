@@ -1,4 +1,5 @@
 A [Giter8][g8] template for using embedded kafka provided by Lagom framework.
+
 About Template
 ----------------------
 # Lagom Framework + Kafka Integration
