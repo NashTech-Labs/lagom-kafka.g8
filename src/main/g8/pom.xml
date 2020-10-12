@@ -17,7 +17,7 @@
     <lagom.version>1.2.2</lagom.version>
     <play.version>2.5.4</play.version>
     <jdk.version>1.8</jdk.version>
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13.1</junit.version>
     <mvn.assembly.version>2.6</mvn.assembly.version>
     <mvn.compiler.version>3.5.1</mvn.compiler.version>
   </properties>
